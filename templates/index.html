@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+    {% for record in data %}
+    <ul>
+        <li>name : {{record.name }}</li>
+        <li>length : {{record.length}} </li>
+    </ul>
+    {% endfor %}
+{% endblock %}
