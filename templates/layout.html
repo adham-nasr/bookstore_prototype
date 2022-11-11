@@ -1,8 +1,10 @@
 <html>
     <head>
         <title>Bookstore</title>
+        <link rel="stylesheet" href="{{ url_for('static' , filename='styles/style.css')}}"/>
     </head>
     <body>
-        {% block content %}{% endblock %}
+        {% block content %}
+        {% endblock %}
     </body>
 </html>

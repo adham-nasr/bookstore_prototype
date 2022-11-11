@@ -2,10 +2,25 @@
 
 
 {% block content %}
-    {% for record in data %}
-    <ul>
-        <li>name : {{record.name }}</li>
-        <li>length : {{record.length}} </li>
-    </ul>
-    {% endfor %}
+        <h1>Bookstore</h1>
+        <a href="/register"> <button class="button button1">Register</button></a>
+        <a href="/login"> <button class="button button2">Login</button></a>
+        <table>
+            <tr>
+                <th>Title</th> 
+                <th>Author</th>
+                <th>Genre</th>
+                <th>Height</th>
+                <th>Publisher</th>
+            </tr>
+            {% for book in data %}
+                <tr>
+                    <td>{{book.title}}</td>
+                    <td>{{book.author}}</td>
+                    <td>{{book.genre}}</td>
+                    <td>{{book.length}}</td>
+                    <td>{{book.publisher}}</td>
+                </tr>
+            {% endfor %}
+        </table>
 {% endblock %}
