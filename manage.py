@@ -49,7 +49,7 @@ def index():
 def login():
     if request.method == "GET":
         return render_template("login.html")
-    return redirect('/')
+    return render_template("mybooks.html")
 
 
 
@@ -65,7 +65,7 @@ def register():
     db.session.add(user)
     db.session.commit()
 
-    return redirect("/")
+    return render_template("mybooks.html")
 
 if __name__ == '__main__':
     app.run(debug=True)
