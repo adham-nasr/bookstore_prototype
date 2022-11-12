@@ -88,7 +88,6 @@ html {
   }
 
   table, td, th {
-    border: 1px solid white;
     color: white;
 
   }
@@ -97,7 +96,10 @@ html {
     border-collapse: collapse;
     width: 100%;
   }
-  
+  td,th {
+    
+    background : linear-gradient(to right , rgba(0,0,0,0.9), rgba(0,0,0,0.1));
+}
   th {
     text-align: left;
   }

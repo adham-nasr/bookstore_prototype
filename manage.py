@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template , request , redirect
 from flask_sqlalchemy import SQLAlchemy
 import os
 
@@ -45,17 +45,27 @@ def index():
     return render_template("index.html" , data=books)
 
 
-@app.route('/login')
+@app.route('/login' , methods=["GET","POST"])
 def login():
-    return render_template("login.html")
+    if request.method == "GET":
+        return render_template("login.html")
+    return redirect('/')
 
 
 
-@app.route('/register')
+@app.route('/register' , methods=["GET","POST"])
 def register():
-    return render_template("register.html")
+    if request.method == "GET":
+        return render_template("register.html")
+    name = request.form["name"]
+    email = request.form["email"]
+    password = request.form["password"]
 
+    user = User(username=name,email=email,password=password)
+    db.session.add(user)
+    db.session.commit()
 
+    return redirect("/")
 
 if __name__ == '__main__':
     app.run(debug=True)
