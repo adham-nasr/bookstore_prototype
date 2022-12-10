@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+<h1>Add a book</h1>
+
+
+<form action="/books/add" class="add_text" method="POST">
+
+  <div class="div1_add">
+  <label for="cars">Add: </label>
+        <select name="book" id="book">
+            {% for book in books %}
+                <option value={{book.id}}>{{book.title}} - {{book.author}}</option>
+            {% endfor %}
+        </select>
+  </div>
+  <div class="div3_add">
+    <input type="submit" value="Submit" class="button1 button">
+  </div>
+</form>
+{% endblock %}

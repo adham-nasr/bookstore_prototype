@@ -12,5 +12,25 @@
         <!-- <a href="#about">About</a> -->
         <input type="text" name="search" placeholder="Search.." id="search">
     </div>
+    <div>
+        <table>
+            <tr>
+                <th>Title</th> 
+                <th>Author</th>
+                <th>Genre</th>
+                <th>Height</th>
+                <th>Publisher</th>
+            </tr>
+            {% for book in books %}
+                <tr>
+                    <td>{{book.title}}</td>
+                    <td>{{book.author}}</td>
+                    <td>{{book.genre}}</td>
+                    <td>{{book.length}}</td>
+                    <td>{{book.publisher}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
 
 {% endblock %}
