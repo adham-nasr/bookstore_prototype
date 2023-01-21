@@ -2,7 +2,7 @@ html {
     font-size: 17px;
     font-family: "Segoe UI", Arial, Helvetica, sans-serif;
   }
-  .button {
+  .my_button {
     border: none;
     color: white;
     padding: 15px 32px;
@@ -14,64 +14,64 @@ html {
     cursor: pointer;
   }
 
-    .button1 {
+    .my_button1 {
     background-color:#7a6517;
     color:  white;
     border: 2px solid #7a6517;
     }
 
-    .button1:hover {
+    .my_button1:hover {
     background-color: #7a6517;
     color: white;
     border: 2px solid #7a6517;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
     }
-    .button1 {border-radius: 12px;}
+    .my_button1 {border-radius: 12px;}
 
-    .button2 {
+    .my_button2 {
     background-color:#7a6517;
     color:  white;
     border: 2px solid #7a6517;
     
     }
 
-    .button2:hover {
+    .my_button2:hover {
     background-color: #7a6517;
     color: white;
     border: 2px solid #7a6517;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
     }
-    .button2 {border-radius: 12px;}
+    .my_button2 {border-radius: 12px;}
   body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    background : linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)) , url('/static/images/background.jpg');
+    background : linear-gradient(rgba(0, 0, 0,.4), rgba(0, 0, 0,.4)) , url('/static/images/background.jpg');
   }
   
-  .form__fieldset {
+  .my_form__fieldset {
     padding: 40px 20px;
 
   }
   
-  .form__fieldset:not(:last-of-type) {
+  .my_form__fieldset:not(:last-of-type) {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
   
-  .form__input {
+  .my_form__input {
     font-size: 2rem;
  }
   
-  .form__select {
+  .my_form__select {
     padding: 4px 2px;
   }
   
-  .form__label {
+  .my_form__label {
     margin-right: 20px;
     color: #f2f2f2  ;
   }
   
-  .form__submit {
+  .my_form__submit {
     /* padding: 8px 16px; */
     cursor: pointer;
     float: left;
@@ -80,7 +80,7 @@ html {
     border: 2px solid #7a6517;
   }
   
-  .form__submit:hover {
+  .my_form__submit:hover {
     background-color: #7a6517;
     color: white;
     border: 2px solid #7a6517;
@@ -104,13 +104,13 @@ html {
     text-align: left;
   }
   /* Add a black background color to the top navigation */
-.topnav {
+.my_topnav {
     background-color: #333;
     overflow: hidden;
   }
   
   /* Style the links inside the navigation bar */
-  .topnav a {
+  .my_topnav a {
     float: left;
     color: #f2f2f2;
     text-align: center;
@@ -120,18 +120,18 @@ html {
   }
   
   /* Change the color of links on hover */
-  .topnav a:hover {
+  .my_topnav a:hover {
     background-color: #7a6517;
     color: white;
   }
   
   /* Add a color to the active/current link */
-  .topnav a.active {
+  .my_topnav a.active {
     background-color: #7a6517;
     color: white;
   }
 
-   #search {
+   #my_search {
     width: 130px;
     box-sizing: border-box;
     border: 2px solid #ccc;
@@ -145,7 +145,7 @@ html {
     transition: width 0.4s ease-in-out;
   }
   
-  #search {
+  #my_search {
     width: 100%;
   } 
 
@@ -173,7 +173,60 @@ html {
     justify-content: center;
   }
 
-  .error{
+  .my_error{
     color: red;
     margin: 5%;
+  }
+
+  h6{
+    text-align: center;
+  } 
+  .cards-wrapper{
+      display: flex;
+      justify-content: flex-start;
+  }
+  .my_img-style{
+      width : 100%;
+      height : 80%;
+      object-fit: contain;
+  }
+  .my_flexbox-item{
+      background: beige;
+      width: 20%;
+      height : 320px;
+      margin: 5px;
+      padding: 5px;
+      overflow: hidden;
+      display:flex;
+      flex-direction:column;
+      align-items : center;
+  }
+  .my_flexbox-item p{
+    margin-bottom: 4px;
+    font-size: 12px;
+    text-align: center;
+  }
+  .allgenres{
+    margin: 2% 4%;
+  }
+  .genre{
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  .my_butt{
+    width: 5%;
+  }
+  .my_butt span{
+    background-color: rgb(157, 170, 38);
+    border-radius: 20px;
+  }
+  .genre_name{
+    margin-left: 5.5%;
+    margin-right: 5.5%;
+    padding: 4px;
+    background-color: wheat;
+    margin-top: 100px;
+  }
+  .ptitle{
+    font-weight: bold;
   }

@@ -3,24 +3,47 @@
 
 {% block content %}
         <h1>Bookstore</h1>
-        <a href="/register"> <button class="button button1">Register</button></a>
-        <a href="/login"> <button class="button button2">Login</button></a>
-        <table>
-            <tr>
-                <th>Title</th> 
-                <th>Author</th>
-                <th>Genre</th>
-                <th>Height</th>
-                <th>Publisher</th>
-            </tr>
-            {% for book in data %}
-                <tr>
-                    <td>{{book.title}}</td>
-                    <td>{{book.author}}</td>
-                    <td>{{book.genre}}</td>
-                    <td>{{book.length}}</td>
-                    <td>{{book.publisher}}</td>
-                </tr>
-            {% endfor %}
-        </table>
+        <a href="/register"> <button class="my_button my_button1">Register</button></a>
+        <a href="/login"> <button class="my_button my_button2">Login</button></a>
+        <div class="allgenres">
+          {% for genre in data %}
+            <H3 class="genre_name">{{genre.name}}</H3>
+            <div id="carousel_{{genre.name}}" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner genre">
+                <div class="carousel-item active">
+                  <div class="cards-wrapper">
+                    {% for book in genre.books1 %}
+                    <div class="my_flexbox-item">
+                        <img class="my_img-style" src="https://api.lorem.space/image/book?w=150&h=220&hash=8B7BCDC2{{book.title}}"/>
+                        <p class="ptitle">{{book.title}}</p>
+                        <p>{{book.author}}</p>
+                    </div>
+                    {% endfor %}
+                  </div>
+                </div>
+                {% for books in genre.books2 %}
+                <div class="carousel-item">
+                    <div class="cards-wrapper">
+                      {% for book in books %}
+                      <div class="my_flexbox-item">
+                          <img class="my_img-style" src="https://api.lorem.space/image/book?w=150&h=220&hash=8B7BCDC2{{book.title}}"/>
+                          <p class="ptitle">{{book.title}}</p>
+                          <p>{{book.author}}</p>
+                      </div>
+                      {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+              </div>
+              <button class="carousel-control-prev my_butt" type="button" data-bs-target="#carousel_{{genre.name}}" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next my_butt" type="button" data-bs-target="#carousel_{{genre.name}}" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          {% endfor %}  
+      </div>
 {% endblock %}

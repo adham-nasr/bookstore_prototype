@@ -70,12 +70,38 @@ class LoginForm(FlaskForm):
 @app.route('/')
 def index():
     books = Book.query.all()
-    return render_template("index.html" , data=books)
+    #print(books)
+    a = db.session.query(Book).group_by(Book.genre).all()
+ #   print(a)
+    genres=[]
+    for book in a:
+        genres.append(book.genre)
+    genre_book = []
+    for genre in genres:
+        obj={"name":genre,"books1":Book.query.filter_by(genre=genre).limit(5).all()}
+        books2=Book.query.filter_by(genre=genre).all()[5:]
+        sub_books=[]
+        l=[]
+        i=0
+        for book in books2:
+            l.append(book)
+            i=i+1
+            if i==5:
+                sub_books.append(l)
+                l=[]
+                i=0
+        if len(l):
+            sub_books.append(l)
+        obj["books2"]=sub_books
+        genre_book.append(obj)
+    print(genre_book[0])
+    return render_template("index.html" , data=genre_book)
 
 
 @app.route('/login' , methods=["GET","POST"])
 def login():
     if request.method == "GET":
+        print(db.session.query(Book).all())
         return render_template("login.html")
     
     username = request.form["username"]
